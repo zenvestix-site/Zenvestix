@@ -33,4 +33,452 @@
         /* GLOBAL */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--navy-dark); line-height: 1.6; overflow-x: hidden; font-size: 1rem; min-width: 320px; }
-        h1, h2, h3, h4, h5, h6
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--navy); }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 6rem 0; transition: opacity 0.5s ease; border-bottom: 1px solid var(--gray-light); } /* Clear section separation */
+        .btn { display: inline-block; padding: 1rem 2.5rem; font-weight: 600; text-align: center; border-radius: 4px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; font-size: 1.1rem; }
+        .btn-primary { background: var(--gold); color: var(--navy); }
+        .btn-primary:hover { background: #c49a2a; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(212,175,55,0.3); }
+        .btn-secondary { background: transparent; color: var(--gold); border: 2px solid var(--gold); }
+        .btn-secondary:hover { background: rgba(212, 175, 55, 0.1); transform: translateY(-2px); box-shadow: 0 4px 12px rgba(212,175,55,0.3); }
+        .btn-gold { background: var(--gold); color: var(--navy); }
+        .btn-gold:hover { background: #c49a2a; box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3); }
+
+        /* HERO */
+        #hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%); position: relative; overflow: hidden; padding-top: 8rem; padding-bottom: 10rem; text-align: center; }
+        #hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path d="M0,50 L50,0 L100,50 L50,100 Z" fill="none" stroke="%231E2A44" stroke-width="0.5" opacity="0.3"/></svg>') repeat; opacity: 0.3; pointer-events: none; } /* Increased opacity */
+        .hero-content { position: relative; z-index: 2; max-width: 900px; margin: 0 auto; }
+        .hero-headline { font-size: 4.5rem; margin-bottom: 1rem; color: var(--white); text-shadow: 0 2px 4px rgba(0,0,0,0.5); } /* Pop with shadow */
+        .hero-subheadline { font-size: 1.8rem; font-style: italic; color: var(--gold); margin-bottom: 1.5rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5); } /* Larger for mobile, shadow */
+        .hero-body { font-size: 1.3rem; max-width: 700px; margin: 0 auto 2.5rem; color: rgba(255,255,255,0.9); text-shadow: 0 1px 2px rgba(0,0,0,0.5); } /* Larger font, shadow */
+        .hero-buttons { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+
+        /* CREDIBILITY */
+        #credibility { background: var(--navy-light); text-align: center; }
+        .section-title { font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 3rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5); } /* Text shadow for visibility */
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        .stat-item { color: var(--white); }
+        .stat-icon { width: 60px; height: 60px; margin: 0 auto 1rem; stroke: var(--gold); }
+        .stat-number { font-size: 2.5rem; font-weight: 600; color: var(--gold); margin-bottom: 0.5rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+        .stat-label { font-size: 1.1rem; color: var(--white); } /* White for readability */
+
+        /* PROBLEM SOLUTION */
+        #problem-solution { background: var(--white); color: var(--navy); text-align: center; }
+        .ps-heading { font-size: 3rem; color: var(--navy); margin-bottom: 3rem; }
+        .comparison-table { width: 100%; max-width: 1000px; margin: 0 auto 3rem; border-collapse: collapse; font-size: 1.2rem; } /* Larger font */
+        .comparison-table th { background: var(--navy); color: var(--gold); padding: 1.5rem; font-weight: 600; font-family: 'Playfair Display', serif; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+        .comparison-table td { padding: 1.5rem; border-bottom: 1px solid #e2e8f0; }
+        .comparison-table tr td:first-child { font-weight: 600; color: var(--navy); text-align: left; }
+        .comparison-table tr td:nth-child(2) { color: #94a3b8; }
+        .comparison-table tr td:last-child { color: var(--navy); font-weight: 500; }
+        .divider { border-left: 2px solid var(--gold); }
+
+        /* HOW IT WORKS */
+        #how-it-works { background: var(--navy); color: var(--white); text-align: center; }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
+        .process-card { background: rgba(255,255,255,0.05); padding: 2.5rem 1.5rem; border-radius: 8px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .process-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .process-number { font-size: 3.5rem; font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 1rem; opacity: 0.8; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+        .process-title { font-size: 1.8rem; margin-bottom: 1rem; color: var(--white); }
+        .process-desc { color: var(--white); font-size: 1.1rem; } /* White */
+
+        /* SERVICES */
+        #services { background: var(--white); color: var(--navy); text-align: center; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 3rem; } /* More gap for white space */
+        .service-card { background: #f8fafc; padding: 3rem; border-radius: 8px; box-shadow: 0 6px 24px rgba(0,0,0,0.05); transition: all 0.3s ease; } /* Deeper shadows */
+        .service-card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        .service-title { font-size: 1.8rem; color: var(--navy); margin-bottom: 1rem; }
+        .service-desc { color: var(--gray-light); margin-bottom: 1.5rem; font-size: 1.1rem; }
+
+        /* PACKAGES */
+        #packages { background: var(--navy-light); color: var(--white); text-align: center; padding: 6rem 0; }
+        .packages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
+        .package-card { background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 8px; box-shadow: 0 6px 24px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+        .package-card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        .package-title { font-size: 1.8rem; color: var(--gold); margin-bottom: 1rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+        .package-desc { color: var(--white); margin-bottom: 1.5rem; font-size: 1.1rem; } /* White */
+        .package-features { text-align: left; list-style-type: none; padding-left: 0; font-size: 1.1rem; color: var(--white); } /* White */
+        .package-features li { margin-bottom: 0.75rem; position: relative; padding-left: 1.5rem; }
+        .package-features li::before { content: '\2022'; color: var(--gold); position: absolute; left: 0; }
+
+        /* TESTIMONIALS */
+        #testimonials { background: var(--navy-light); color: var(--white); text-align: center; padding: 6rem 0; }
+        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
+        .testimonial-card { background: rgba(255,255,255,0.05); padding: 3rem; border-radius: 8px; box-shadow: 0 6px 24px rgba(0,0,0,0.05); }
+        .testimonial-quote { font-style: italic; margin-bottom: 1rem; color: var(--white); font-size: 1.1rem; } /* White */
+        .testimonial-author { font-weight: 600; color: var(--gold); font-size: 1.1rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+
+        /* REHAB SERVICES */
+        #rehab-services { background: var(--white); color: var(--navy); text-align: center; padding: 6rem 0; }
+        .rehab-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
+        .rehab-card { background: #f8fafc; padding: 3rem; border-radius: 8px; box-shadow: 0 6px 24px rgba(0,0,0,0.05); transition: all 0.3s ease; }
+        .rehab-card:hover { box-shadow: 0 15px 35px rgba(0,0,0,0.1); transform: translateY(-5px); }
+        .rehab-title { font-size: 1.8rem; color: var(--navy); margin-bottom: 1rem; }
+        .rehab-desc { color: var(--gray-light); margin-bottom: 1.5rem; font-size: 1.1rem; }
+        .rehab-features { text-align: left; list-style-type: none; padding-left: 0; font-size: 1.1rem; }
+        .rehab-features li { margin-bottom: 0.75rem; position: relative; padding-left: 1.5rem; }
+        .rehab-features li::before { content: '\2022'; color: var(--gold); position: absolute; left: 0; }
+        .before-after { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; justify-content: center; }
+        .before-after img { width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .before-after img:hover { transform: scale(1.05); }
+
+        /* BIG CTA */
+        #big-cta { background: var(--navy-dark); text-align: center; padding: 6rem 0; } /* More padding */
+        .cta-headline { font-size: 3rem; color: var(--white); margin-bottom: 1rem; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+        .cta-subtext { font-size: 1.3rem; color: var(--white); max-width: 700px; margin: 0 auto 2.5rem; } /* White */
+
+        /* CONTACT */
+        #contact { background: var(--navy-light); padding: 6rem 0; text-align: center; border-bottom: none; } /* No bottom border to reduce space */
+        .embed-container { position: relative; padding-bottom: 75%; height: 0; overflow: hidden; max-width: 100%; margin-top: 3rem; }
+        .embed-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        /* MODAL */
+        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background: rgba(0,0,0,0.5); align-items: center; justify-content: center; }
+        .modal-content { background: var(--white); color: var(--navy); padding: 3rem; border-radius: 8px; max-width: 700px; margin: 1rem; box-shadow: 0 6px 24px rgba(0,0,0,0.2); font-size: 1.1rem; } /* Larger padding/font */
+        .close { color: var(--navy); float: right; font-size: 2rem; cursor: pointer; }
+
+        /* FOOTER */
+        footer { background: var(--navy-dark); color: var(--white); padding: 2rem 0; font-size: 1.1rem; } /* Reduced padding, white text */
+        .footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+        footer a { color: var(--white); text-decoration: none; margin-left: 1.5rem; transition: color 0.3s ease; } /* White links */
+        footer a:hover { color: var(--gold); }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        .animate { animation: fadeInUp 0.8s ease forwards; }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) { .hero-headline { font-size: 3.5rem; } .ps-heading { font-size: 2.5rem; } .comparison-table { font-size: 1.1rem; } }
+        @media (max-width: 768px) { .container { padding: 0 1.5rem; } .hero-buttons { flex-direction: column; gap: 1rem; align-items: center; } .hero-headline { font-size: 3rem; } .comparison-table { display: block; font-size: 1rem; } .comparison-table thead { display: none; } .comparison-table tr { display: block; margin-bottom: 1.5rem; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; } .comparison-table td { display: block; text-align: center; padding: 1rem; font-size: 1.1rem; } .comparison-table td:first-child { background: var(--navy); color: var(--gold); font-weight: 600; } .divider { border-left: none; border-top: 2px solid var(--gold); } .footer-content { flex-direction: column; text-align: center; } body { font-size: 1.1rem; } section { padding: 4rem 0; } .service-card, .package-card, .rehab-card { padding: 2rem; } .modal-content { padding: 2rem; max-width: 90%; } .section-title, .stat-number, .package-title, .testimonial-author, .process-number { text-shadow: 0 1px 2px rgba(0,0,0,0.5); } /* Ensure gold visibility on mobile */ .stat-label, .process-desc, .package-desc, .testimonial-quote, .cta-subtext { color: var(--white); } /* Force white on dark bgs */ }
+        @media (max-width: 480px) { .hero-headline { font-size: 2.5rem; } .hero-subheadline { font-size: 1.5rem; } .hero-body { font-size: 1.1rem; } .stat-number { font-size: 2rem; } .stat-label { font-size: 1rem; } .ps-heading { font-size: 2rem; } .process-title { font-size: 1.5rem; } .process-desc { font-size: 1rem; } .service-title, .package-title, .rehab-title { font-size: 1.5rem; } .service-desc, .package-desc, .rehab-desc { font-size: 1rem; } .testimonial-quote, .testimonial-author { font-size: 1rem; } .cta-headline { font-size: 2.5rem; } .cta-subtext { font-size: 1.1rem; } .btn { padding: 0.8rem 2rem; font-size: 1rem; } .package-features li, .rehab-features li { font-size: 1rem; } .before-after { flex-direction: column; } .before-after img { max-width: 100%; } }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-headline">Zenvestix</h1>
+                <p class="hero-subheadline">Execution-as-a-Service for Real Estate Investors</p>
+                <p class="hero-body">We turn investor vision into execution — building the systems, teams, and automation that power profitable renovations, STRs, and portfolios. From strategy to delivery, Zenvestix runs your operation so you can scale without chaos.</p>
+                <div class="hero-buttons">
+                    <a href="https://www.skool.com/zenvestix-investor-execution-1862/about?ref=ffe1eda401da4a35be24899766713db6" class="btn btn-primary">Join Investor Execution Club</a>
+                    <a href="https://calendar.app.google/x7ro28n85pg9PU6G8" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Book a Call</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREDIBILITY -->
+    <section id="credibility">
+        <div class="container">
+            <h2 class="section-title">Why Investors Trust Us</h2>
+            <div class="stats-grid">
+                <div class="stat-item animate">
+                    <div class="stat-icon"><i data-feather="check-square" aria-hidden="true"></i></div>
+                    <div class="stat-number">750+</div>
+                    <div class="stat-label">projects completed</div>
+                </div>
+                <div class="stat-item animate">
+                    <div class="stat-icon"><i data-feather="calendar" aria-hidden="true"></i></div>
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">years experience</div>
+                </div>
+                <div class="stat-item animate">
+                    <div class="stat-icon"><i data-feather="cpu" aria-hidden="true"></i></div>
+                    <div class="stat-number">Tech-Driven</div>
+                    <div class="stat-label">Notion, automation, AI systems</div>
+                </div>
+                <div class="stat-item animate">
+                    <div class="stat-icon"><i data-feather="users" aria-hidden="true"></i></div>
+                    <div class="stat-number">Trusted By</div>
+                    <div class="stat-label">Flippers, STR owners, funds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEM SOLUTION -->
+    <section id="problem-solution">
+        <div class="container">
+            <h2 class="ps-heading">Stop Managing Chaos. Start Executing.</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Problem</th>
+                        <th>Old Way</th>
+                        <th>Our Way</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Scattered contractors</td>
+                        <td>Texts & spreadsheets</td>
+                        <td class="divider">Centralized dashboards</td>
+                    </tr>
+                    <tr>
+                        <td>Slow projects</td>
+                        <td>No visibility</td>
+                        <td class="divider">Automated updates & ROI tracking</td>
+                    </tr>
+                    <tr>
+                        <td>Lost profit</td>
+                        <td>Disconnected teams</td>
+                        <td class="divider">End-to-end execution systems</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#how-it-works" class="btn btn-gold">See How It Works →</a>
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works">
+        <div class="container">
+            <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--gold);">How It Works</h2>
+            <div class="process-grid">
+                <div class="process-card animate">
+                    <div class="stat-icon"><i data-feather="clipboard" aria-hidden="true"></i></div>
+                    <div class="process-number">1</div>
+                    <h3 class="process-title">Plan</h3>
+                    <p class="process-desc">Assess goals, scope, and integrate with our vetted crews for execution.</p>
+                </div>
+                <div class="process-card animate">
+                    <div class="stat-icon"><i data-feather="settings" aria-hidden="true"></i></div>
+                    <div class="process-number">2</div>
+                    <h3 class="process-title">Systemize</h3>
+                    <p class="process-desc">Build Notion dashboards, automations, and frameworks.</p>
+                </div>
+                <div class="process-card animate">
+                    <div class="stat-icon"><i data-feather="tool" aria-hidden="true"></i></div>
+                    <div class="process-number">3</div>
+                    <h3 class="process-title">Execute</h3>
+                    <p class="process-desc">Manage contractors, track ROI, deliver via our vetted crews.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <div class="container">
+            <h2 class="ps-heading">Our Offerings</h2>
+            <div class="services-grid">
+                <div class="service-card animate">
+                    <div class="stat-icon"><i data-feather="database" aria-hidden="true"></i></div>
+                    <h3 class="service-title">Systems Setup</h3>
+                    <p class="service-desc">Custom dashboards and automations that track every detail in real time for scalable operations.</p>
+                    <button onclick="openModal('systems')" class="btn btn-gold">Learn More</button>
+                </div>
+                <div class="service-card animate">
+                    <div class="stat-icon"><i data-feather="activity" aria-hidden="true"></i></div>
+                    <h3 class="service-title">Project Execution</h3>
+                    <p class="service-desc">Full management of rehabs and flips with vetted crews, timelines, and transparent reporting.</p>
+                    <button onclick="openModal('project')" class="btn btn-gold">Learn More</button>
+                </div>
+                <div class="service-card animate">
+                    <div class="stat-icon"><i data-feather="user-check" aria-hidden="true"></i></div>
+                    <h3 class="service-title">Investor Concierge</h3>
+                    <p class="service-desc">Hands-off oversight for property onboarding, design, and ongoing performance tracking.</p>
+                    <button onclick="openModal('concierge')" class="btn btn-gold">Learn More</button>
+                </div>
+                <div class="service-card animate">
+                    <div class="stat-icon"><i data-feather="users" aria-hidden="true"></i></div>
+                    <h3 class="service-title">Community</h3>
+                    <p class="service-desc">Private network for investors with live discussions, systems access, and accountability.</p>
+                    <a href="https://www.skool.com/zenvestix-investor-execution-1862/about?ref=ffe1eda401da4a35be24899766713db6" class="btn btn-gold">Join Community</a>
+                </div>
+                <div class="service-card animate">
+                    <div class="stat-icon"><i data-feather="book-open" aria-hidden="true"></i></div>
+                    <h3 class="service-title">Training</h3>
+                    <p class="service-desc">Step-by-step modules and sessions on proven workflows for managing multimillion-dollar projects.</p>
+                    <a href="https://www.skool.com/zenvestix-investor-execution-1862/about?ref=ffe1eda401da4a35be24899766713db6" class="btn btn-gold">Start Training</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PACKAGES -->
+    <section id="packages">
+        <div class="container">
+            <h2 class="ps-heading">Packages Built for Every Investor</h2>
+            <p>Whether you’re building systems, scaling a portfolio, or launching your next STR, Zenvestix offers tiered packages designed to match your level of involvement and growth goals. Each package is fully customizable — start where you are, and scale as you go.</p>
+            <div class="packages-grid">
+                <div class="package-card animate">
+                    <h3 class="package-title">Essentials — Foundation Setup</h3>
+                    <p class="package-desc">Perfect for investors ready to organize and systemize their operations.</p>
+                    <ul class="package-features">
+                        <li>Dashboard installation</li>
+                        <li>Automation setup</li>
+                        <li>Standard templates</li>
+                        <li>Basic training</li>
+                    </ul>
+                </div>
+                <div class="package-card animate">
+                    <h3 class="package-title">Professional — Managed Execution</h3>
+                    <p class="package-desc">Hands-on management for investors who want clear oversight without micromanaging.</p>
+                    <ul class="package-features">
+                        <li>Contractor coordination</li>
+                        <li>Reporting dashboards</li>
+                        <li>Progress tracking</li>
+                        <li>Weekly updates</li>
+                    </ul>
+                </div>
+                <div class="package-card animate">
+                    <h3 class="package-title">Elite — Done-For-You Execution</h3>
+                    <p class="package-desc">Full-service execution for investors who want peace of mind from start to finish.</p>
+                    <ul class="package-features">
+                        <li>Renovation oversight</li>
+                        <li>Vendor management</li>
+                        <li>Design coordination</li>
+                        <li>STR setup and launch</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 3rem;">
+                <h3>Ongoing Maintenance & Portfolio Support</h3>
+                <p>Real estate doesn’t stop at project completion — and neither do we. Zenvestix offers ongoing property and system maintenance plans that keep your operations running smoothly long after launch. From STR cleanings and inspections to tech updates, reporting, and automation support, we stay connected to ensure your assets stay optimized and profitable. Choose a recurring maintenance tier or custom plan to match your portfolio’s needs — consistent, proactive, and fully managed.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Investors Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card animate">
+                    <p class="testimonial-quote">"Zenvestix turned my scattered rehabs into a streamlined machine. Their Notion dashboards and automations saved me 20 hours/week, and vetted crews handled execution flawlessly. ROI up 30% on my last STR launch."</p>
+                    <p class="testimonial-author">– Alex R., Real Estate Fund Manager</p>
+                </div>
+                <div class="testimonial-card animate">
+                    <p class="testimonial-quote">"As a flipper, I was drowning in contractor chaos. Zenvestix's systems and concierge service automated everything, from bids to ROI tracking. Professional, efficient—worth every penny."</p>
+                    <p class="testimonial-author">– Sarah T., Independent Investor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REHAB SERVICES -->
+    <section id="rehab-services">
+        <div class="container">
+            <h2 class="ps-heading">Renovation Management</h2>
+            <p>We handle every detail — from scope creation to final punch list. Our process covers budgeting, design coordination, permit management, vendor selection, scheduling, and quality control. Each project is tracked through live dashboards showing progress, costs, and timelines in real time. We oversee bids, permits, inspections, and materials to ensure your investment stays on track, on budget, and compliant — no surprises, just execution.</p>
+            <div class="rehab-grid">
+                <div class="rehab-card animate">
+                    <h3 class="rehab-title">Full Rehab Services</h3>
+                    <p class="rehab-desc">We manage comprehensive rehab work on investment properties—from ground-up planning, budgeting, and execution to market-ready launches—ensuring professional oversight, vetted crews, and end-to-end transparency.</p>
+                    <ul class="rehab-features">
+                        <li>Exterior upgrades: Roof repair, siding, windows for curb appeal and efficiency.</li>
+                        <li>Interior structural fixes: Plumbing, electrical, flooring, and code compliance.</li>
+                        <li>Cosmetic enhancements: Paint, kitchen/bath remodels, trim for maximum ROI.</li>
+                        <li>Outdoor/expansion projects: Landscaping, decks, unit conversions for marketability.</li>
+                        <li>Full process management: Scope, budgeting, vendors, scheduling, quality control.</li>
+                    </ul>
+                    <div class="before-after">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABQAAAAPoCAYAAADh1iY+AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAH9JREFUeJzs3dGNQEAQBME3Zx1oM3J8wR5JqA4c8l3sF5CAIAgCAAAAAAAAAAAAAACABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4/1l4AAAAAElFTkSuQmCC" alt="Rehab Before and After Interior">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABQAAAAPoCAYAAADh1iY+AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAH9JREFUeJzs3dGNQEAQBME3Zx1oM3J8wR5JqA4c8l3sF5CAIAgCAAAAAAAAAAAAAACABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD4/1l4AAAAAElFTkSuQmCC" alt="Rehab Before and After Exterior">
+                    </div>
+                </div>
+                <div class="rehab-card animate">
+                    <h3 class="rehab-title">Short-Term Rental (STR) Setup</h3>
+                    <p class="rehab-desc">We take your property from empty to income-producing. Zenvestix manages the full STR process — renovation, design, furnishing, tech, and launch. Our team handles property planning, contractor coordination, interior setup, and automation installation (smart locks, thermostats, cameras, Wi-Fi, PMS). Once complete, we optimize your listing, pricing, and guest flow so it performs from day one. You get a turnkey, fully branded, and revenue-ready STR built to run itself.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIG CTA -->
+    <section id="big-cta">
+        <div class="container">
+            <h2 class="cta-headline">Ready to Scale Without Chaos?</h2>
+            <p class="cta-subtext">Join the community to learn our systems—or hire us for done-for-you execution.</p>
+            <div class="hero-buttons">
+                <a href="https://www.skool.com/zenvestix-investor-execution-1862/about?ref=ffe1eda401da4a35be24899766713db6" class="btn btn-primary">Join Investor Execution Club</a>
+                    <a href="https://calendar.app.google/x7ro28n85pg9PU6G8" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Book a Call</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--gold);">Get Started</h2>
+            <a href="https://www.skool.com/zenvestix-investor-execution-1862/about?ref=ffe1eda401da4a35be24899766713db6" class="btn btn-primary" style="margin-bottom: 1rem;">Join Investor Execution Club</a>
+            <a href="https://calendar.app.google/x7ro28n85pg9PU6G8" class="btn btn-secondary" target="_blank" rel="noopener noreferrer" style="margin-bottom: 1rem;">Book a Call</a>
+            <a href="https://tally.so/r/nW75Ak" class="btn btn-gold" style="margin-bottom: 2rem;">Submit Client Intake Form</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    Zenvestix © 2025 | Execution-as-a-Service for Investors<br>
+                    <a href="mailto:zenvestix@gmail.com">zenvestix@gmail.com</a>
+                </div>
+                <div>
+                    <a href="#">LinkedIn</a> |
+                    <a href="#">Instagram</a> |
+                    <a href="https://www.skool.com/zenvestix-investor-execution-1862/about?ref=ffe1eda401da4a35be24899766713db6">Skool</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+    <div id="systems-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('systems')">&times;</span>
+            <h3>Systems Setup</h3>
+            <p>We design and install the operational backbone of your investment business — custom dashboards, automations, and workflows that track every dollar, task, and contractor in real time. No chaos. No spreadsheets. Just clear data, smart automation, and a system built to scale.</p>
+        </div>
+    </div>
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('project')">&times;</span>
+            <h3>Project Execution</h3>
+            <p>From initial bid to final walkthrough, we manage every moving piece of your rehab or STR project. Our vetted teams, timelines, and reporting systems keep projects on budget, on schedule, and fully transparent — so you stay in control without being on site.</p>
+        </div>
+    </div>
+    <div id="concierge-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('concierge')">&times;</span>
+            <h3>Investor Concierge</h3>
+            <p>For investors who want hands-off growth. We handle property onboarding, STR setup, design coordination, vendor management, and ongoing performance tracking — giving you a single point of contact for everything your investment needs to run profitably.</p>
+        </div>
+    </div>
+
+    <script>
+        feather.replace();
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.animate').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.8s ease';
+            observer.observe(el);
+        });
+
+        function openModal(id) {
+            document.getElementById(id + '-modal').style.display = 'flex';
+        }
+        function closeModal(id) {
+            document.getElementById(id + '-modal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
