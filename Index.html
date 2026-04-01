@@ -9,18 +9,18 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CDN (easiest for Netlify - no build) -->
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     h1, h2, h3 { font-family: 'Playfair Display', serif; }
     .hero-bg {
-      background-image: linear-gradient(rgba(28,28,28,0.65), rgba(28,28,28,0.75)), url('https://picsum.photos/id/1015/2000/1200'); /* Replace with real high-end Caribbean property photo */
+      background-image: linear-gradient(rgba(28,28,28,0.70), rgba(28,28,28,0.80)), 
+                        url('https://picsum.photos/id/1015/2000/1300'); /* Replace this URL with your final high-end villa image */
       background-size: cover;
       background-position: center;
     }
-    .logo-gold { color: #C8A96A; }
   </style>
 </head>
 <body class="bg-[#1C1C1C] text-[#F7F5F0]">
@@ -29,7 +29,7 @@
   <header class="sticky top-0 z-50 bg-[#1C1C1C]/95 border-b border-[#C8A96A]/20">
     <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <img src="logo.png" alt="Zenvestix Caribbean" class="h-10"> <!-- Put your logo image here as logo.png -->
+        <img src="logo.png" alt="Zenvestix Caribbean" class="h-10"> <!-- Save your provided logo as logo.png in same folder -->
         <div>
           <span class="text-2xl tracking-tight font-bold">ZENVESTIX</span>
           <span class="text-[#C8A96A] text-sm block -mt-1">CARIBBEAN</span>
@@ -37,14 +37,14 @@
       </div>
       <nav class="hidden md:flex gap-8 text-sm uppercase tracking-widest">
         <a href="#what-we-do" class="hover:text-[#C8A96A]">What We Do</a>
+        <a href="#for-owners" class="hover:text-[#C8A96A]">For Owners & Investors</a>
         <a href="#why" class="hover:text-[#C8A96A]">Why Us</a>
-        <a href="#who" class="hover:text-[#C8A96A]">Who We Work With</a>
         <a href="#how" class="hover:text-[#C8A96A]">How We Work</a>
         <a href="#contact" class="hover:text-[#C8A96A]">Contact</a>
       </nav>
       <a href="https://wa.me/16142075557" target="_blank" 
          class="bg-[#C8A96A] text-[#1C1C1C] px-6 py-2 text-sm font-medium hover:bg-[#E8E1D6] transition">
-        Message on WhatsApp
+        Chat With Us
       </a>
     </div>
   </header>
@@ -56,7 +56,7 @@
         We acquire, renovate, and operate high-performing Caribbean rental properties.
       </h1>
       <p class="text-xl md:text-2xl text-[#E8E1D6] mb-10 max-w-2xl mx-auto">
-        Zenvestix Caribbean partners with owners and investors to transform underperforming assets into profitable, well-run properties.
+        We partner with owners and investors to reposition underperforming properties into high-performing, revenue-driven assets.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="#contact" class="bg-[#C8A96A] text-[#1C1C1C] px-10 py-4 text-lg font-medium hover:bg-white transition">Start a Conversation</a>
@@ -94,59 +94,87 @@
     </div>
   </section>
 
-  <!-- WHY ZENVESTIX -->
+  <!-- NEW: FOCUSED ON PERFORMANCE -->
+  <section class="py-20 bg-[#2A2A2A]">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold mb-6">Focused on Performance</h2>
+      <p class="text-xl text-[#E8E1D6] mb-10">We don’t just manage properties—we improve them.</p>
+      <div class="grid md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
+        <ul class="space-y-4 text-lg">
+          <li class="flex gap-3"><span class="text-[#C8A96A]">•</span> Increase revenue</li>
+          <li class="flex gap-3"><span class="text-[#C8A96A]">•</span> Improve operations</li>
+        </ul>
+        <ul class="space-y-4 text-lg">
+          <li class="flex gap-3"><span class="text-[#C8A96A]">•</span> Elevate presentation</li>
+          <li class="flex gap-3"><span class="text-[#C8A96A]">•</span> Create consistent performance</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOR OWNERS & INVESTORS (new nav item points here) -->
+  <section id="for-owners" class="py-20 bg-[#1C1C1C]">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <p class="text-2xl font-medium">"We don’t just support properties—we take ownership of performance."</p>
+    </div>
+  </section>
+
+  <!-- WHY US (updated) -->
   <section id="why" class="py-24 bg-[#F7F5F0] text-[#1C1C1C]">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-6">Built for Properties That Should Be Performing Better</h2>
-      <p class="text-xl mb-12">Most properties do not have a demand problem. They have an execution problem.</p>
-      <div class="grid md:grid-cols-2 gap-8 text-left">
+      <h2 class="text-4xl font-bold mb-6">Execution is the Difference</h2>
+      <p class="text-xl mb-10">Most underperforming properties don’t lack demand—they lack execution.</p>
+      
+      <p class="text-lg mb-8 max-w-2xl mx-auto">We bring:</p>
+      <div class="grid md:grid-cols-2 gap-8 text-left max-w-2xl mx-auto">
         <ul class="space-y-4 text-lg">
-          <li class="flex gap-3"><span class="text-[#C8A96A]">•</span> Operations</li>
-          <li class="flex gap-3"><span class="text-[#C8A96A]">•</span> Presentation</li>
+          <li class="flex gap-3"><span class="text-[#C8A96A]">•</span> Structured operations</li>
+          <li class="flex gap-3"><span class="text-[#C8A96A]">•</span> Disciplined project oversight</li>
         </ul>
         <ul class="space-y-4 text-lg">
-          <li class="flex gap-3"><span class="text-[#C8A96A]">•</span> Systems</li>
-          <li class="flex gap-3"><span class="text-[#C8A96A]">•</span> Revenue strategy</li>
+          <li class="flex gap-3"><span class="text-[#C8A96A]">•</span> Revenue-focused systems</li>
+          <li class="flex gap-3"><span class="text-[#C8A96A]">•</span> Real accountability</li>
         </ul>
       </div>
+      
+      <p class="mt-16 text-lg font-medium">Built on real-world experience in construction, operations, and asset management.</p>
     </div>
   </section>
 
-  <!-- WHO WE WORK WITH -->
-  <section id="who" class="py-24 bg-[#1C1C1C]">
-    <div class="max-w-7xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-12">Who We Work With</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center">
-          <h3 class="text-2xl font-semibold mb-3">Property Owners</h3>
-          <p class="text-[#E8E1D6]">You own the asset but need better results and stronger oversight.</p>
-        </div>
-        <div class="text-center">
-          <h3 class="text-2xl font-semibold mb-3">Investors</h3>
-          <p class="text-[#E8E1D6]">You have capital or assets but need execution and boots on the ground.</p>
-        </div>
-        <div class="text-center">
-          <h3 class="text-2xl font-semibold mb-3">Hospitality Assets</h3>
-          <p class="text-[#E8E1D6]">We reposition and operate small hotels, villas, and rental portfolios.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW WE WORK -->
+  <!-- HOW WE WORK (fixed sizing) -->
   <section id="how" class="py-24 bg-[#F7F5F0] text-[#1C1C1C]">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-12">How We Work</h2>
-      <ol class="space-y-12">
-        <li><span class="text-6xl font-bold text-[#C8A96A]">1.</span> <span class="text-2xl font-semibold">Evaluate the asset</span></li>
-        <li><span class="text-6xl font-bold text-[#C8A96A]">2.</span> <span class="text-2xl font-semibold">Build the strategy</span></li>
-        <li><span class="text-6xl font-bold text-[#C8A96A]">3.</span> <span class="text-2xl font-semibold">Execute the transformation</span></li>
-        <li><span class="text-6xl font-bold text-[#C8A96A]">4.</span> <span class="text-2xl font-semibold">Operate for performance</span></li>
-      </ol>
+      <h2 class="text-4xl font-bold text-center mb-16">How We Work</h2>
+      <div class="space-y-16">
+        <div class="flex gap-8 items-start">
+          <span class="text-7xl font-bold text-[#C8A96A] flex-shrink-0 w-16">1</span>
+          <div>
+            <span class="text-2xl font-semibold block">Evaluate the asset</span>
+          </div>
+        </div>
+        <div class="flex gap-8 items-start">
+          <span class="text-7xl font-bold text-[#C8A96A] flex-shrink-0 w-16">2</span>
+          <div>
+            <span class="text-2xl font-semibold block">Build the strategy</span>
+          </div>
+        </div>
+        <div class="flex gap-8 items-start">
+          <span class="text-7xl font-bold text-[#C8A96A] flex-shrink-0 w-16">3</span>
+          <div>
+            <span class="text-2xl font-semibold block">Execute the transformation</span>
+          </div>
+        </div>
+        <div class="flex gap-8 items-start">
+          <span class="text-7xl font-bold text-[#C8A96A] flex-shrink-0 w-16">4</span>
+          <div>
+            <span class="text-2xl font-semibold block">Operate for performance</span>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- MARKET -->
+  <!-- MARKET POSITION -->
   <section class="py-20 bg-[#1C1C1C] text-center">
     <div class="max-w-3xl mx-auto px-6">
       <h2 class="text-4xl font-bold mb-6">Focused on the Caribbean</h2>
@@ -158,6 +186,7 @@
   <section id="contact" class="py-24 bg-[#1C1C1C]">
     <div class="max-w-2xl mx-auto px-6">
       <h2 class="text-4xl font-bold text-center mb-4">Own a property that should be doing more?</h2>
+      <p class="text-center text-[#E8E1D6] mb-4">Tell us about your property, current performance, and where you see the opportunity.</p>
       <p class="text-center text-[#E8E1D6] mb-12">Let’s talk about renovation, repositioning, operations, or full-service management.</p>
       
       <form name="contact" method="POST" data-netlify="true" class="space-y-6">
@@ -187,7 +216,7 @@
       
       <div class="mt-12 text-center">
         <a href="https://wa.me/16142075557" target="_blank" class="inline-flex items-center gap-3 text-[#C8A96A] hover:text-white text-lg">
-          Or message us directly on WhatsApp: +1 614-207-5557
+          Or chat with us on WhatsApp: +1 614-207-5557
         </a>
       </div>
     </div>
@@ -206,13 +235,5 @@
     </div>
   </footer>
 
-  <!-- Netlify success message -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.location.search.includes('success')) {
-        alert('We’ll be in touch shortly.');
-      }
-    });
-  </script>
 </body>
 </html>
